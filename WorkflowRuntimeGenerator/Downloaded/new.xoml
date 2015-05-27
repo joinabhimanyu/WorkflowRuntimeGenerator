@@ -1,0 +1,119 @@
+<StateMachineWorkflowActivity x:Class="WorkflowLibrary1.new" InitialStateName="START_WORKFLOW" x:Name="new" DynamicUpdateCondition="{x:Null}" CompletedStateName="{x:Null}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow" > 
+<StateActivity x:Name="START_WORKFLOW">
+<EventDrivenActivity x:Name="ON_START_WORKFLOW_DISBURSEMENT_PENDING">
+<HandleExternalEventActivity x:Name="START_WORKFLOW_DISBURSEMENT_PENDING" EventName="DISBURSEMENT_PENDING" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_START_WORKFLOW_DISBURSEMENT_PENDING" TargetStateName="DISBURSEMENT_PENDING" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="CREATE_NEWPROPOSAL">
+<EventDrivenActivity x:Name="ON_CREATE_NEWPROPOSAL_NEWPROPOSAL_COMPLETED">
+<HandleExternalEventActivity x:Name="CREATE_NEWPROPOSAL_NEWPROPOSAL_COMPLETED" EventName="NEWPROPOSAL_COMPLETED" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_CREATE_NEWPROPOSAL_NEWPROPOSAL_COMPLETED" TargetStateName="NEWPROPOSAL_COMPLETED" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="COLLECT_PAYMENT">
+<EventDrivenActivity x:Name="ON_COLLECT_PAYMENT_PAYMENT_RECEIVED">
+<HandleExternalEventActivity x:Name="COLLECT_PAYMENT_PAYMENT_RECEIVED" EventName="PAYMENT_RECEIVED" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_COLLECT_PAYMENT_PAYMENT_RECEIVED" TargetStateName="PAYMENT_RECEIVED" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="CHECK_QC">
+<EventDrivenActivity x:Name="ON_CHECK_QC_QC_COMPLETED">
+<HandleExternalEventActivity x:Name="CHECK_QC_QC_COMPLETED" EventName="QC_COMPLETED" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_CHECK_QC_QC_COMPLETED" TargetStateName="QC_COMPLETED" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="CREATE_POLICY">
+<EventDrivenActivity x:Name="ON_CREATE_POLICY_POLICY_GENERATED">
+<HandleExternalEventActivity x:Name="CREATE_POLICY_POLICY_GENERATED" EventName="POLICY_GENERATED" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_CREATE_POLICY_POLICY_GENERATED" TargetStateName="POLICY_GENERATED" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="DISBURSEMENT_PENDING">
+<EventDrivenActivity x:Name="ON_DISBURSEMENT_PENDING_DISBURSEMENT_COMPLETED">
+<HandleExternalEventActivity x:Name="DISBURSEMENT_PENDING_DISBURSEMENT_COMPLETED" EventName="DISBURSEMENT_COMPLETED" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_DISBURSEMENT_PENDING_DISBURSEMENT_COMPLETED" TargetStateName="DISBURSEMENT_COMPLETED" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="NEWPROPOSAL_COMPLETED">
+<EventDrivenActivity x:Name="ON_NEWPROPOSAL_COMPLETED_CREATE_NEWPROPOSAL">
+<HandleExternalEventActivity x:Name="NEWPROPOSAL_COMPLETED_CREATE_NEWPROPOSAL" EventName="CREATE_NEWPROPOSAL" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_NEWPROPOSAL_COMPLETED_CREATE_NEWPROPOSAL" TargetStateName="CREATE_NEWPROPOSAL" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_NEWPROPOSAL_COMPLETED_COLLECT_PAYMENT">
+<HandleExternalEventActivity x:Name="NEWPROPOSAL_COMPLETED_COLLECT_PAYMENT" EventName="COLLECT_PAYMENT" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_NEWPROPOSAL_COMPLETED_COLLECT_PAYMENT" TargetStateName="COLLECT_PAYMENT" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_NEWPROPOSAL_COMPLETED_CHECK_QC">
+<HandleExternalEventActivity x:Name="NEWPROPOSAL_COMPLETED_CHECK_QC" EventName="CHECK_QC" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_NEWPROPOSAL_COMPLETED_CHECK_QC" TargetStateName="CHECK_QC" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_NEWPROPOSAL_COMPLETED_CREATE_POLICY">
+<HandleExternalEventActivity x:Name="NEWPROPOSAL_COMPLETED_CREATE_POLICY" EventName="CREATE_POLICY" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_NEWPROPOSAL_COMPLETED_CREATE_POLICY" TargetStateName="CREATE_POLICY" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_NEWPROPOSAL_COMPLETED_RI_START">
+<HandleExternalEventActivity x:Name="NEWPROPOSAL_COMPLETED_RI_START" EventName="RI_START" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_NEWPROPOSAL_COMPLETED_RI_START" TargetStateName="RI_START" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="PAYMENT_RECEIVED">
+<EventDrivenActivity x:Name="ON_PAYMENT_RECEIVED_COLLECT_PAYMENT">
+<HandleExternalEventActivity x:Name="PAYMENT_RECEIVED_COLLECT_PAYMENT" EventName="COLLECT_PAYMENT" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_PAYMENT_RECEIVED_COLLECT_PAYMENT" TargetStateName="COLLECT_PAYMENT" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_PAYMENT_RECEIVED_CHECK_QC">
+<HandleExternalEventActivity x:Name="PAYMENT_RECEIVED_CHECK_QC" EventName="CHECK_QC" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_PAYMENT_RECEIVED_CHECK_QC" TargetStateName="CHECK_QC" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_PAYMENT_RECEIVED_CREATE_POLICY">
+<HandleExternalEventActivity x:Name="PAYMENT_RECEIVED_CREATE_POLICY" EventName="CREATE_POLICY" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_PAYMENT_RECEIVED_CREATE_POLICY" TargetStateName="CREATE_POLICY" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_PAYMENT_RECEIVED_RI_START">
+<HandleExternalEventActivity x:Name="PAYMENT_RECEIVED_RI_START" EventName="RI_START" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_PAYMENT_RECEIVED_RI_START" TargetStateName="RI_START" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="QC_COMPLETED">
+<EventDrivenActivity x:Name="ON_QC_COMPLETED_CREATE_NEWPROPOSAL">
+<HandleExternalEventActivity x:Name="QC_COMPLETED_CREATE_NEWPROPOSAL" EventName="CREATE_NEWPROPOSAL" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_QC_COMPLETED_CREATE_NEWPROPOSAL" TargetStateName="CREATE_NEWPROPOSAL" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_QC_COMPLETED_COLLECT_PAYMENT">
+<HandleExternalEventActivity x:Name="QC_COMPLETED_COLLECT_PAYMENT" EventName="COLLECT_PAYMENT" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_QC_COMPLETED_COLLECT_PAYMENT" TargetStateName="COLLECT_PAYMENT" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_QC_COMPLETED_CHECK_QC">
+<HandleExternalEventActivity x:Name="QC_COMPLETED_CHECK_QC" EventName="CHECK_QC" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_QC_COMPLETED_CHECK_QC" TargetStateName="CHECK_QC" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_QC_COMPLETED_CREATE_POLICY">
+<HandleExternalEventActivity x:Name="QC_COMPLETED_CREATE_POLICY" EventName="CREATE_POLICY" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_QC_COMPLETED_CREATE_POLICY" TargetStateName="CREATE_POLICY" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_QC_COMPLETED_RI_START">
+<HandleExternalEventActivity x:Name="QC_COMPLETED_RI_START" EventName="RI_START" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_QC_COMPLETED_RI_START" TargetStateName="RI_START" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="POLICY_GENERATED">
+<EventDrivenActivity x:Name="ON_POLICY_GENERATED_CREATE_NEWPROPOSAL">
+<HandleExternalEventActivity x:Name="POLICY_GENERATED_CREATE_NEWPROPOSAL" EventName="CREATE_NEWPROPOSAL" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_POLICY_GENERATED_CREATE_NEWPROPOSAL" TargetStateName="CREATE_NEWPROPOSAL" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_POLICY_GENERATED_COLLECT_PAYMENT">
+<HandleExternalEventActivity x:Name="POLICY_GENERATED_COLLECT_PAYMENT" EventName="COLLECT_PAYMENT" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_POLICY_GENERATED_COLLECT_PAYMENT" TargetStateName="COLLECT_PAYMENT" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_POLICY_GENERATED_CHECK_QC">
+<HandleExternalEventActivity x:Name="POLICY_GENERATED_CHECK_QC" EventName="CHECK_QC" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_POLICY_GENERATED_CHECK_QC" TargetStateName="CHECK_QC" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_POLICY_GENERATED_CREATE_POLICY">
+<HandleExternalEventActivity x:Name="POLICY_GENERATED_CREATE_POLICY" EventName="CREATE_POLICY" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_POLICY_GENERATED_CREATE_POLICY" TargetStateName="CREATE_POLICY" />
+</EventDrivenActivity>
+<EventDrivenActivity x:Name="ON_POLICY_GENERATED_RI_START">
+<HandleExternalEventActivity x:Name="POLICY_GENERATED_RI_START" EventName="RI_START" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_POLICY_GENERATED_RI_START" TargetStateName="RI_START" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="DISBURSEMENT_COMPLETED">
+<EventDrivenActivity x:Name="ON_DISBURSEMENT_COMPLETED_BG_ENTRY">
+<HandleExternalEventActivity x:Name="DISBURSEMENT_COMPLETED_BG_ENTRY" EventName="BG_ENTRY" InterfaceType="{x:Type p8:IEvents}" xmlns:p8="clr-namespace:WorkFlowClassLibrary;Assembly=WorkFlowClassLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"  />
+<SetStateActivity x:Name="setStateActivity_DISBURSEMENT_COMPLETED_BG_ENTRY" TargetStateName="BG_ENTRY" />
+</EventDrivenActivity>
+</StateActivity><StateActivity x:Name="BG_ENTRY_COMPLETED">
+</StateActivity><StateActivity x:Name="CASE_STATUS_OR_CASE_DIARY_COMPLETED">
+</StateActivity></StateMachineWorkflowActivity>
